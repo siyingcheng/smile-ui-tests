@@ -21,8 +21,25 @@ public abstract class BasePage implements IPage {
         PageFactory.initElements(driver, this);
     }
 
+    /**
+     * Whether the form displays the specific error item
+     *
+     * @param errorItem the specific error item
+     * @return Whether the form displays the specific error item
+     */
     public boolean hasErrorItem(String errorItem) {
         By errorItemBy = By.xpath(String.format("//div[@class='el-form-item__error' and normalize-space()='%s']", errorItem));
+        return !driver.findElements(errorItemBy).isEmpty();
+    }
+
+    /**
+     * Whether the page displays the specific error message
+     *
+     * @param errorMsg the specific error message
+     * @return Whether the page displays the specific error message
+     */
+    public boolean hasErrorMessage(String errorMsg) {
+        By errorItemBy = By.xpath(String.format("//p[@class='el-message__content' and normalize-space()='%s']", errorMsg));
         return !driver.findElements(errorItemBy).isEmpty();
     }
 
