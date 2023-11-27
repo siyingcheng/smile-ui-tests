@@ -13,10 +13,10 @@
             </run>
         </groups>
         <classes>
-            <class name="com.smile.testcases.RegisterTest">
-                <methods>
-                    <include name="test_TC0001_VerifyRegisterUserErrorWhenPropertiesIncorrect"/>
-                </methods>
+            <class name="com.smile.testcases.LoginTest">
+<!--                <methods>-->
+<!--                    <include name="test_TC0002_VerifyLoginWithAdministratorSuccess"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test>

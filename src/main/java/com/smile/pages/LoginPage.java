@@ -27,4 +27,17 @@ public class LoginPage extends BasePage {
         waitPageLoadReady();
         return registerPage;
     }
+
+    public void inputUsernameAndPassword(String username, String password) {
+        this.username.clear();
+        this.username.sendKeys(username);
+        this.password.clear();
+        this.password.sendKeys(password);
+    }
+
+    public NavigatorPage clickLoginBtn() {
+        this.loginBtn.click();
+        waitPageLoadReady();
+        return new NavigatorPage(driver);
+    }
 }

@@ -96,7 +96,7 @@ public class RegisterTest extends BaseUITest {
         loginPage.loginBtn.click();
         navigatorPage = new NavigatorPage(webDriver);
         navigatorPage.waitPageLoadReady();
-        uiAssertions.assertTrue(navigatorPage.nickname(nickname).isDisplayed(),
+        uiAssertions.assertTrue(navigatorPage.userMenuItem(nickname).isDisplayed(),
                 "Verify nickname is displayed after login");
     }
 
