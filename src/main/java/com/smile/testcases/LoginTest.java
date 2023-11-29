@@ -16,8 +16,6 @@ import static com.smile.apiobjects.user.SmileUsers.INVALID;
 import static com.smile.apiobjects.user.SmileUsers.OWEN;
 
 public class LoginTest extends BaseUITest {
-    private static final String ADMINISTRATOR_NICKNAME = "Administrator";
-    private static final String OWEN_NICKNAME = "Owen Si";
     private final List<String> needDeleteUsers = new ArrayList<>();
     private NavigatorPage navigatorPage;
     private LoginPage loginPage;
@@ -63,7 +61,7 @@ public class LoginTest extends BaseUITest {
         navigatorPage = loginPage.clickLoginBtn();
 
         reporter.logStep("Step 5 - Verify login success");
-        uiAssertions.assertTrue(navigatorPage.userMenuItem(ADMINISTRATOR_NICKNAME).isDisplayed(),
+        uiAssertions.assertTrue(navigatorPage.userMenuItem(ADMIN.getNickname()).isDisplayed(),
                 "Verify login success");
         uiAssertions.assertTrue(navigatorPage.managementMenuItem.isDisplayed(),
                 "Verify administrator could able to view the Management menu item");
@@ -79,7 +77,7 @@ public class LoginTest extends BaseUITest {
         navigatorPage = loginPage.clickLoginBtn();
 
         reporter.logStep("Step 5 - Verify login success");
-        uiAssertions.assertTrue(navigatorPage.userMenuItem(OWEN_NICKNAME).isDisplayed(),
+        uiAssertions.assertTrue(navigatorPage.userMenuItem(OWEN.getNickname()).isDisplayed(),
                 "Verify login success");
     }
 
